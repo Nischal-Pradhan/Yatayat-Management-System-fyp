@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title> Sign Up </title>
+</head>
+<body>
+    
+    <a href="/" class="nav-link m-2 menu-item nav-active text-lg fixed-top"> 
+        <button type="button" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-back" viewBox="0 0 16 16">
+                <path d="M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z"/>
+            </svg> BACK
+        </button>
+    </a>
+
+    {% block content %}
+    <div class="container mt-5 border p-4 bg-light shadow col-xl-3 ps-5 pe-5 py-5 mb-5">
+        <h3 class="mb-5 text-sm-center"> 
+            Sign Up 
+        </h3>
+
+        <form action="/signup" method="post" class="row justify-content-center">
+            {% csrf_token %} 
+            <div class="text-center col-md-12">
+                <label for="" > Username </label>
+                <input class="form-control" type="text" id="username" name="username" required> <br>
+            </div>
+
+            <div class="text-center col-md-12">
+                <label for=""> First Name </label>
+                <input class="form-control" type="text" id="fname" name="fname" required> <br>
+            </div>
+
+            <div class="text-center col-md-12">
+                <label for=""> Last Name </label>
+                <input class="form-control" type="text" id="lname" name="lname" required> <br>
+            </div>
+
+            <div class="text-center col-md-12">
+                <label for=""> Email </label>
+                <input class="form-control" type="email" id="email" name="email" required> <br>
+            </div>
+
+            <div class="text-center col-md-12">
+                <label for=""> Password </label>
+                <input class="form-control" type="password" id="password" name="password" required> <br>
+            </div>
+
+            <div class="text-center col-md-12">
+                <label for=""> Confirm Password </label>
+                <input class="form-control" type="password" id="confirmpw" name="confirmpw" required>
+
+                <div class="float-end">
+                    <input type="checkbox" id="box" onclick ="showhidepw()"> <label> Show Password </label> <br><br>
+                </div>
+            </div>
+            
+            <button class="btn btn-primary float-end" type="submit"> Sign Up </button>
+            <span class="text-center col-md-12"><a href="signin" style="text-decoration: none;"> Already Have an account? </a></span>
+        </form>
+    </div>
+    {% endblock %}
+
+    <script type="text/javascript">
+        function showhidepw()
+        {
+        if(document.getElementById('box').checked)
+            {document.getElementById("password").type='text';
+            document.getElementById("confirmpw").type='text';}
+        else
+            {document.getElementById("password").type='password';
+            document.getElementById("confirmpw").type='password';}
+        }
+        </script> 
+</body>
+</html>

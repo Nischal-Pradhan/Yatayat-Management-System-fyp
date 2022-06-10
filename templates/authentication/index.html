@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title> Home </title>
+</head>
+
+<style type="text/css">
+    .card{
+        padding: 30px 30px 30px 30px;
+        cursor: pointer;
+        color: white;
+        background: linear-gradient(-45deg, #fff 10%, #0d6efd 10%);
+        transition: .3s ease-in;
+    }
+
+    .card:hover{
+        transition: .1s ease-out;
+        transform: scale(1.02);
+        color: white;
+    }
+ </style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="d-flex flex-grow-1">
+            <span class="w-100 d-lg-none d-block"></span>
+            <a class="navbar-brand d-none d-lg-inline-block ms-5" href="#"> YATAYAT MANAGEMENT SYSTEM </a>
+            <div class="w-100 text-right">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-nav ms-auto flex-nowrap">
+                <li class="nav-item">
+                    <a class="nav-link menu-item text-light me-5" href="/admin">ADMIN</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link menu-item text-light" href="signup">Register</a>
+                </li>
+                <div class="vr text-light ms-4 me-4"></div>
+                <li class="nav-item me-5">
+                    <a class="nav-link menu-item text-light" href="signin">LogIn</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    {% if user.is_authenticaed %}
+    <h3> Logged in as {{ user.username }} </h3>
+    
+    {% else %}
+    <div class="p-4 mb-4 mx-auto col-xl-9">
+
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show text-sm-center" role="alert">  
+            <strong>Message: </strong> {{ message }}
+            <a href="">
+                <button type="button" class="btn-close" aria-label="Close"></button>
+            </a>
+        </div>
+        {% endfor %}
+
+        <div class="d-flex align-items-center justify-content-center
+                    p-md-5 m-md-5 text-center bg-light border">
+            <h1 class="m-3">
+                Welcome to Yatayat Management System  
+            </h1>
+            <div class="vr"></div>
+            <p class="lead fw-normal m-5 p-5 border shadow card" style="text-align: justify;">
+                <strong>
+                Our Mission: <br> &nbsp;&nbsp;&nbsp;&nbsp;
+                "To be the leading transport agency providing an affordable, efficient and safe mode of urban and inter-district public transportation services in Nepal, as well as flag-carrier cross border service to regional cities."
+                </strong>
+            </p>
+        </div>
+    </div>
+    {% endif %}
+
+    
+    <footer class="text-center bg-light text-dark rounded-top">
+        <div class="col-md-16 mx-auto border">
+            <h2>
+                CONTACT INFO
+            </h2>
+        </div>
+
+        <div class="container text-center">
+            <div class="row p-4">
+
+                <div class="col-md-3 col-xl-3 mx-auto">
+                    <h5 class="text-uppercase mb-4">
+                        HOTLINE NO.
+                    </h5>
+                    <p> 01-5552686 </p> 
+                    <p> 01-5524679 </p> 
+                </div>
+
+                <div class="vr text-dark"></div>
+                <div class="col-md-3 col-xl-3 mx-auto">
+                    <h5 class="text-uppercase mb-4">
+                        Office Address:
+                    </h5>
+                    <p>Pulchowk, Lalitpur, Ward-no.3 </p>
+                    <p>Nepal-44600 </p>
+                    <p>Landmark: Sajha Petrol Pump </p>
+                </div>
+
+                <div class="vr text-dark"></div>
+                <div class="col-md-3 col-xl-3 mx-auto mb-md-0">
+                    <h5 class="text-uppercase mb-4">
+                        Toll Free (For Ntc Users)
+                    </h5>
+                    <p> 1660-01-77777 </p> 
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center bg-primary text-light fixed-bottom">
+            © 2022 Nischal Pradhan:
+            <a class="footer-copyright text-center bg-primary text-white fw-bold" href="mailto: info.yatayatmanagement.fyp@gmail.com?subject = Feedback & body = Message">
+                info.yatayatmanagement.fyp@gmail.com
+            </a>
+        </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>
