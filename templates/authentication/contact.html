@@ -1,4 +1,176 @@
-.wrapper 
-.input_field input[type="text"],
-.wrapper textarea:nth-child(7):hover{ 
-}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title> Contact </title>
+</head>
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show text-sm-center" role="alert">  
+        <strong>Message: </strong> {{ message }}
+        <a href="">
+            <button type="button" class="btn-close" aria-label="Close"></button>
+        </a>
+    </div>
+    {% endfor %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"> YATAYAT MANAGEMENT SYSTEM </a>
+
+            <div class="vr text-light me-5"></div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="about">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="settings">Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    </li> 
+                    <div class="vr text-light"></div>
+                    <li>
+                        <a class="nav-link" href="signout" data-toggle="modal" data-target="#logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="logout" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLabel">Log Out {{ user.username }}?</h5>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-danger">
+                    <a href="signout" style="color: white; text-decoration: none;">
+                        Yes
+                    </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="container d-flex">
+        
+        <div class="container mt-5 p-4">
+            <div class="lead fw-normal" style="text-align: justify;">
+                <h1>HOTLINE NO.</h1>
+                <p> 01-5552686 <br> 01-5524679 </p> 
+            </div>
+            <br>
+
+            <div class="lead fw-normal" style="text-align: justify;">
+                <h3>Office Address:</h3>
+                <p>
+                    Pulchowk, Lalitpur, Ward-no.3 <br>
+                    Nepal-44600 <br>
+                    Landmark: Sajha Petrol Pump 
+                </p> 
+            </div>
+            <br>
+
+            <div class="lead fw-normal" style="text-align: justify;">
+                <h3>Toll Free(For Ntc Users)</h3>
+                <p> 1660-01-77777 </p> 
+            </div>
+            <br>
+
+            <div class="lead fw-normal" style="text-align: justify;">
+                <h3> Email: </h3>
+                <p><a href = "mailto: info.yatayatmanagement.fyp@gmail.com?subject = Feedback & body = Message"> info.yatayatmanagement.fyp@gmail.com</a> </p>
+            </div>
+        </div>
+
+        <div class="container mt-5 border p-4 bg-light shadow col-xl-6 ps-5 pe-5 py-5">
+            <h1> Contact Us </h1> <br>
+            <form action="" method="POST" name="contact">
+                {% csrf_token %} 
+                <div class="form-group d-sm-flex margin">
+                    <input class="form-control" id="username" name="username" type="text" value="{{ user.username }}" placeholder="Username" required/>
+                </div>
+                <br>
+
+                <div class="form-group d-sm-flex margin">
+                    <input class="form-control" id="emailAddress" name="email" type="email" value="{{ user.email }}" placeholder="Email" required/>
+                </div>
+                <br>
+
+                <div class="form-group d-sm-flex margin">
+                    <input class="form-control" id="phone" name="phone" type="text" placeholder="Phone" maxlength="10" required/>
+                </div>
+                <br>
+
+                <div class="form-group d-sm-flex margin">
+                    <select class="form-select" aria-label="Default select example" id="selectSubject" name="selectSubject" required>
+                        <option selected value hidden>Subject Type</option>
+                        <option value="complaint">Complaint</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="query">Query</option>
+                        <option value="request">Request</option>
+                    </select>
+                </div>
+                <br>
+
+                <div class="form-group d-sm-flex margin" aria-readonly="true">
+                    <textarea class="form-control" id="message" name="message" placeholder="Message" style="height: 10rem;" required></textarea>
+                </div>
+                <br>
+
+                <div class="form-group">
+                    <button class="btn btn-primary btn-lg" type="submit" name="submit-form">
+                         Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <footer class="page-footer font-small fixed-bottom">
+            <div class="footer-copyright text-center bg-primary text-white">
+                © 2022 Copyright: Nischal Pradhan (info.yatayatmanagement.fyp@gmail.com)
+            </div>
+        </footer>
+    </main>
+
+    <div class="d-grid gap-3 container mt-5">
+        <button class="btn btn-outline-primary btn-lg col-2" data-bs-toggle="collapse" data-bs-target="#map"> Show Map </button>
+        <div id="map" class="collapse lead fw-normal col-16">
+            <div class="container d-md-flex border-primary shadow mb-lg-5">
+                <iframe width="100%" height="370" style="border:none; overflow:hidden" scrolling="no" frameborder="0" allowtransparency="true" allow="encrypted-media" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.23078231477!2d85.31522951506147!3d27.679261182803515!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19ca4a4841fb%3A0x20b66c36de9e72b9!2sSajha+Yatayat!5e0!3m2!1sen!2snp!4v1550743674052"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
