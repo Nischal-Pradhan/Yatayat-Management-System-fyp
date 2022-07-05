@@ -6,11 +6,11 @@ This project is a Yatayat Management System for my Final Year Project.
 2. run command <br> 'python manage.py runserver'
 
 ### 
-admin login -->
+### Admin login -->
 > username --> admin <br />
 > password --> admin
 
-users login -->
+### Users login -->
 > register user from register page
 ###
 
