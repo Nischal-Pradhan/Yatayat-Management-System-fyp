@@ -7,7 +7,7 @@ This project is a Yatayat Management System for my Final Year Project.
 
 ### 
 admin login -->
-> username --> admin
+> username --> admin <br />
 > password --> admin
 
 users login -->
