@@ -5,8 +5,14 @@ This project is a Yatayat Management System for my Final Year Project.
 1. activte vertual environment <br> 'venv\Script\activate'
 2. run command <br> 'python manage.py runserver'
 
-## admin login --> username --> admin /// password --> admin
-## users login --> register user from register page
+### 
+admin login -->
+> username --> admin
+> password --> admin
+
+users login -->
+> register user from register page
+###
 
 ## COMMANDS to create django project
 1. Install Virtual environment <br><i> 'pip install virtualenv' </i>
