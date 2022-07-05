@@ -1,5 +1,8 @@
 # Yatayat-Management-System-fyp
-This project is a Yatayat Management System for my Final Year Project. 
+> This project is a Yatayat Management System for my Final Year Project. <br /> 
+> This application contains informations from the Sajha Yatayat site. <br />
+> Informations such as about Sajha Yatayat, Buses Routes based IRL and also contains non IRL contents like emails and buses names and so on. <br />
+> This project is based on Django Python Framework with HTML5, CSS3, Bootstrap-5 and JavaScript.
 
 ## Run this project
 1. activte vertual environment <br> 'venv\Script\activate'
