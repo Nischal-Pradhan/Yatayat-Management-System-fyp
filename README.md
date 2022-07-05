@@ -2,7 +2,7 @@
 > This project is a Yatayat Management System for my Final Year Project. <br /> 
 > Informations such as about Sajha Yatayat, Buses Routes are IRL informations and this project also contains non-IRL contents like email and buses names and so on. 
 > <br/> <br/>
-> ###This project is based on Django Python Framework with HTML5, CSS3, Bootstrap-5 and JavaScript.
+> This project is based on Django Python Framework with HTML5, CSS3, Bootstrap-5 and JavaScript.
 
 ## How to Run this project
 1. activte vertual environment <br> 'venv\Script\activate'
