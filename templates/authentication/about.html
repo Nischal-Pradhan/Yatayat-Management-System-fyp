@@ -10,6 +10,30 @@
 
     <title> About </title>
 
+    <style>
+    /* ------- scrollbar -css -------*/
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px #198754; 
+    }
+    /* Handle */
+    /* scrollbar for dark mode */
+    ::-webkit-scrollbar-thumb {
+        background: #198754; 
+        border: 1px solid #4eaf82;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #198754; 
+    }
+    .dropdown-item:active{
+        background-color: #198754;
+    }
+    </style>
+
 </head>
 <body>
 
@@ -22,7 +46,7 @@
     </div>
     {% endfor %}
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
             
         <div class="container-fluid">
             <a class="navbar-brand" href="#"> YATAYAT MANAGEMENT SYSTEM </a>
@@ -93,7 +117,7 @@
                 <br><br>
   
                 <div class="d-grid gap-2">
-                    <button class="btn btn-outline-primary btn-lg col-4 mx-auto" data-bs-toggle="collapse" data-bs-target="#short-term">
+                    <button class="btn btn-outline-success btn-lg col-4 mx-auto" data-bs-toggle="collapse" data-bs-target="#short-term">
                         Check short-term strategy
                     </button> <br>
                     <div id="short-term" class="collapse lead fw-normal col-16 mx-auto"  style="text-align: justify;">
@@ -103,7 +127,7 @@
                 </div>
 
                 <div class="d-grid gap-2">
-                    <button class="btn btn-outline-primary btn-lg col-4 mx-auto" data-bs-toggle="collapse" data-bs-target="#medium-term">
+                    <button class="btn btn-outline-success btn-lg col-4 mx-auto" data-bs-toggle="collapse" data-bs-target="#medium-term">
                         Check medium-term strategy 
                     </button> <br>
                     <div id="medium-term" class="collapse lead fw-normal col-16 mx-auto"  style="text-align: justify;">
@@ -118,7 +142,7 @@
                 </div>
 
                 <div class="d-grid gap-2">                
-                    <button class="btn btn-outline-primary btn-lg col-4 mx-auto" data-bs-toggle="collapse" data-bs-target="#long-term">
+                    <button class="btn btn-outline-success btn-lg col-4 mx-auto" data-bs-toggle="collapse" data-bs-target="#long-term">
                         Check long-term strategy
                     </button> <br>
                     <div id="long-term" class="collapse lead fw-normal col-16 mx-auto"  style="text-align: justify;">
@@ -131,7 +155,7 @@
     </main>
     
     <footer class="page-footer font-small fixed-bottom">
-        <div class="footer-copyright text-center bg-primary text-white">
+        <div class="footer-copyright text-center bg-success text-white">
             © 2022 Copyright: Nischal Pradhan (info.yatayatmanagement.fyp@gmail.com)
         </div>
     </footer>

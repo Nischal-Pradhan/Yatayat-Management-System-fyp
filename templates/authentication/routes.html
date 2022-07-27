@@ -11,18 +11,57 @@
     <title> Routes </title>
 
     <style>
+
+    ::selection {
+        background-color: #198754; /*Highlight Color*/
+        color: #fff; /*Text Color*/
+    }
+    
+    /* ------- scrollbar -css -------*/
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 2px #198754; 
+    }
+    /* Handle */
+    /* scrollbar for dark mode */
+    ::-webkit-scrollbar-thumb {
+        background: #198754; 
+        border: 1px solid #4eaf82;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #198754; 
+    }
+
     .hidemapbar {
         position: relative;
         clip-path: polygon(0% 8%, 100% 8%, 100% 100%, 0% 100%);
         top: -3em;
         padding: 8px;
-        border: 1px solid #0D6EFD;
+        border: 1px solid #198754;
     }
+    
+    select option:checked {
+        background: #198754 -webkit-linear-gradient(bottom, #198754 0%, #198754 100%);
+        color: #fff;
+    }
+    
+    .dropdown-item:active{
+        background-color: #198754;
+    }
+
+    option:hover {
+        background-color: #198754;
+    }
+
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"> YATAYAT MANAGEMENT SYSTEM </a>
 
@@ -103,7 +142,7 @@
                                         <option value="sixpm">6:00 pm</option>
                                     </select></td>
                                     <td>Baglung</td>
-                                    <td data-bs-toggle="collapse" data-bs-target="#pul-bag-map" style="cursor: pointer; color: #0D6EFD;">
+                                    <td data-bs-toggle="collapse" data-bs-target="#pul-bag-map" style="cursor: pointer; color: #198754;">
                                         Show Route
                                     </trd>
                                 </tr>
@@ -117,7 +156,7 @@
                                         <option value="sixpm">6:00 pm</option>
                                     </select></td>
                                     <td>Kushma, Parbat</td>
-                                    <td data-bs-toggle="collapse" data-bs-target="#lal-par-map" style="cursor: pointer; color: #0D6EFD;">
+                                    <td data-bs-toggle="collapse" data-bs-target="#lal-par-map" style="cursor: pointer; color: #198754;">
                                         Show Route
                                     </td>
                                 </tr>
@@ -131,7 +170,7 @@
                                         <option value="sixpm">6:00 pm</option>
                                     </select></td>
                                     <td> Pokhara </td>
-                                    <td data-bs-toggle="collapse" data-bs-target="#kal-pokh-map" style="cursor: pointer; color: #0D6EFD;">
+                                    <td data-bs-toggle="collapse" data-bs-target="#kal-pokh-map" style="cursor: pointer; color: #198754;">
                                         Show Route
                                     </td>
                                 </tr>
@@ -147,21 +186,21 @@
     <div class="container text-center border col-4">
         <div id="pul-bag-map" class="collapse lead fw-normal col-16">
             <h3> Pulchowk, Lalitpur to Baglung</h3>
-            <div class=" d-md-flex border-primary shadow mb-lg-5 mt-3">
+            <div class=" d-md-flex border-success shadow mb-lg-5 mt-3">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d902946.3700050673!2d83.8882665195153!3d27.8671458697266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x39eb19cbf6b89eb7%3A0x951b3c8ac733e3ec!2sIOE%2C%20Pulchowk%20Campus%2C%20M8J9%2BC9Q%2C%20Lalitpur%2044600!3m2!1d27.6810911!2d85.3184948!4m5!1s0x399609da7ba8828d%3A0x22703ce6a17dcdab!2sBaglung!3m2!1d28.277432599999997!2d83.581615!5e0!3m2!1sen!2snp!4v1650721788875!5m2!1sen!2snp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
         
         <div id="lal-par-map" class="collapse lead fw-normal col-16">
             <h3> Gongabu Bus Park to Kushma, Parbat</h3>
-            <div class=" d-md-flex border-primary shadow mb-lg-5 mt-3">
+            <div class=" d-md-flex border-success shadow mb-lg-5 mt-3">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d1805969.5551648622!2d83.38872892607624!3d27.86253620383321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x39eb192b9cada64d%3A0xdf67e83763747500!2sGongabu%2C%2044600!3m2!1d27.7493381!2d85.321376!4m5!1s0x3995e7348813ef95%3A0xd687f663de31fc68!2sParbat!3m2!1d28.224646399999997!2d83.6986568!5e0!3m2!1sen!2snp!4v1650721896809!5m2!1sen!2snp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
 
         <div id="kal-pokh-map" class="collapse lead fw-normal col-16">
             <h3> Kalanki, Kathmandu to Pokhara</h3>
-            <div class=" d-md-flex border-primary shadow mb-lg-5 mt-3">
+            <div class=" d-md-flex border-success shadow mb-lg-5 mt-3">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d902282.4833162404!2d84.07265514380587!3d27.94671481953433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x39eb187a97f390b1%3A0xec3f47092df0d4ca!2sKalanki%2C%20Kathmandu%2044600!3m2!1d27.693105199999998!2d85.28065389999999!4m5!1s0x3995937bbf0376ff%3A0xf6cf823b25802164!2sPokhara!3m2!1d28.2095831!2d83.9855674!5e0!3m2!1sen!2snp!4v1650721877033!5m2!1sen!2snp" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
@@ -176,7 +215,7 @@
     </div>
 
     <footer class="page-footer font-small fixed-bottom">
-        <div class="footer-copyright text-center bg-primary text-white">
+        <div class="footer-copyright text-center bg-success text-white">
             © 2022 Copyright: Nischal Pradhan (info.yatayatmanagement.fyp@gmail.com)
         </div>
     </footer>

@@ -13,20 +13,19 @@
     .card{
         padding: 30px 30px 30px 30px;
         cursor: pointer;
-        color: white;
-        background: linear-gradient(-45deg, #fff 10%, #0d6efd 10%);
-        transition: .3s ease-in;
+        color: #fff;
+        background: linear-gradient(-45deg, #212529 7%, #198754 10%);
     }
 
     .card:hover{
-        transition: .1s ease-out;
+        transition: .4s ease-in-out;
         transform: scale(1.02);
-        color: white;
+        color: #212529;
     }
  </style>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
         <div class="d-flex flex-grow-1">
             <span class="w-100 d-lg-none d-block"></span>
             <a class="navbar-brand d-none d-lg-inline-block ms-5" href="#"> YATAYAT MANAGEMENT SYSTEM </a>
@@ -39,7 +38,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="navbar-nav ms-auto flex-nowrap">
                 <li class="nav-item">
-                    <a class="nav-link menu-item text-light me-5" href="/admin">ADMIN</a>
+                    <a class="nav-link menu-item text-light me-5" href="/admin" target="_blank">ADMIN</a>
                 </li>
                 
                 <li class="nav-item">
@@ -70,8 +69,8 @@
 
         <div class="d-flex align-items-center justify-content-center
                     p-md-5 m-md-5 text-center bg-light border">
-            <h1 class="m-3">
-                Welcome to Yatayat Management System  
+            <h1 class="m-3 text-succeess">
+                Welcome to Yatayat Management System
             </h1>
             <div class="vr"></div>
             <p class="lead fw-normal m-5 p-5 border shadow card" style="text-align: justify;">
@@ -84,11 +83,10 @@
     </div>
     {% endif %}
 
-    
     <footer class="text-center bg-light text-dark rounded-top">
         <div class="col-md-16 mx-auto border">
             <h2>
-                CONTACT INFO
+                CONTACT <span class="text-success">INFO</span>
             </h2>
         </div>
 
@@ -96,7 +94,7 @@
             <div class="row p-4">
 
                 <div class="col-md-3 col-xl-3 mx-auto">
-                    <h5 class="text-uppercase mb-4">
+                    <h5 class="text-uppercase mb-4 text-success">
                         HOTLINE NO.
                     </h5>
                     <p> 01-5552686 </p> 
@@ -105,7 +103,7 @@
 
                 <div class="vr text-dark"></div>
                 <div class="col-md-3 col-xl-3 mx-auto">
-                    <h5 class="text-uppercase mb-4">
+                    <h5 class="text-uppercase mb-4 text-success">
                         Office Address:
                     </h5>
                     <p>Pulchowk, Lalitpur, Ward-no.3 </p>
@@ -115,7 +113,7 @@
 
                 <div class="vr text-dark"></div>
                 <div class="col-md-3 col-xl-3 mx-auto mb-md-0">
-                    <h5 class="text-uppercase mb-4">
+                    <h5 class="text-uppercase mb-4 text-success">
                         Toll Free (For Ntc Users)
                     </h5>
                     <p> 1660-01-77777 </p> 
@@ -123,9 +121,9 @@
             </div>
         </div>
         
-        <div class="text-center bg-primary text-light fixed-bottom">
+        <div class="text-center bg-success text-light fixed-bottom">
             © 2022 Nischal Pradhan:
-            <a class="footer-copyright text-center bg-primary text-white fw-bold" href="mailto: info.yatayatmanagement.fyp@gmail.com?subject = Feedback & body = Message">
+            <a class="footer-copyright text-center bg-success text-white fw-bold" href="mailto: info.yatayatmanagement.fyp@gmail.com?subject = Feedback & body = Message">
                 info.yatayatmanagement.fyp@gmail.com
             </a>
         </div>
